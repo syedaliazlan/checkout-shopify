@@ -1,0 +1,20 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/docs/api/checkout-ui-extensions/latest/configuration
+
+# 2025-10: has global shopify object + buyerJourney.intercept() support
+api_version = "2025-10"
+
+[[extensions]]
+name = "checkout-email-validation"
+handle = "checkout-email-validation"
+uid = "d8b1b55c-d9b1-3cb2-5860-023ab8d0924117b6077b"
+type = "ui_extension"
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.contact.render-after"
+
+[extensions.capabilities]
+api_access = true
+block_progress = true
+network_access = true
